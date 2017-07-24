@@ -2,7 +2,7 @@
 Display clock with time of the country of your choice
 ![clock](img.jpg)
 
-#dependencies
+## dependencies
 
 You'll find in SRC folder files from http://flipclockjs.com/
 
