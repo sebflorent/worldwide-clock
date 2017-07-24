@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="src/flipclock.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="src/flipclock.min.js"></script>		
+	</head>
+	<body>
+		<div class="clock" style="margin:2em;"></div>
+
+		<script type="text/javascript">
+			var clock;
+			var heure;			           
+            jQuery(document).ready(function() {
+                if(jQuery('.clock')) {			
+                    var myHeaders = new Headers();
+                    var myInit = { method: 'GET',
+                            headers: myHeaders,
+                            mode: 'cors',
+                            cache: 'default' 
+                            };
+                        window.fetch('https://api.timezonedb.com/v2/get-time-zone?key={your_api_key}&format=json&by=zone&zone=America/Martinique',myInit)
+                        .then(res => res.json())
+                        .then(function(resJson) {
+                            let heure = resJson.formatted 
+                            var date = new Date(heure);
+                            clock = jQuery('.clock').FlipClock(date, {
+                            clockFace: 'TwentyFourHourClock'
+                        })
+                    
+                        })
+                            
+                }
+            });
+		</script>
+		
+	</body>
+</html>
