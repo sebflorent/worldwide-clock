@@ -1,6 +1,6 @@
 # worldwide-clock
 Display clock with time of the country of your choice
-![clock](img.jpg)
+![clock](worlwide-clock.png)
 
 ## dependencies
 
